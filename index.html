@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cadastro de pessoas</h1>
+    <form class="form js-form">
+        <label for="name">
+            Nome
+        </label><span>(campo obrigatório)</span>
+        <p id="alert" class="alert alert--hide">Nome deve conter, no mínimo, 3 caracteres e apenas letras.</p>
+        <input class="form-field js-field" id="name" minlength="3" maxlength="120" required pattern="([aA-zZ]{3,120})"
+            type="text" name="name" required>
+        <label for="birth-date">
+            Data de Nascimento
+        </label><span>(campo obrigatório)</span>
+        <p id="alert" class="alert alert--hide">Este Campo não foi preenchido</p>
+        <input class="form-field js-field" id="birth-date" name="birth-date" max="2004-04-26" placeholder="dd-MM-yyyy"
+            type="date" required>
+        <button type="submit" id="btn--salvar">Salvar</button>
+    </form>
+    <table class="table--hide">
+        <thead class="cabecalho">
+            <tr>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody  id="lista"></tbody>
+    </table>
+</body>
+<script src="./main.js"></script>
+
+</html>
